@@ -56,7 +56,7 @@ window.addEventListener("scroll", (e) =>{
         textPres.classList.add("reveal-visible");
         
     }
-    if(window.scrollY > 1520){
+    if(window.scrollY > 1400){
         carrouselImg.classList.add("carrouselSlide");
     }
     if(window.scrollY > 2100){
@@ -81,12 +81,12 @@ if (screen.width > 780)
             if(event.target.id === 'precedent'){
                 if(imageIndex !== 1) {
                     imageIndex--;
-                    translateX += 600
+                    translateX += 550;
                 }
             } else{
                 if(imageIndex !== numberOfImages){
                     imageIndex++;
-                    translateX -= 600;
+                    translateX -= 550;
                 }
             }
         
