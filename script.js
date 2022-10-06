@@ -66,6 +66,7 @@ window.addEventListener("scroll", (e) =>{
     }
 })
 
+
 //Carrousel de compétences
 const carrouselImages = document.querySelector(".carrousel_img");
 const carrouselButtons = document.querySelectorAll("button");
@@ -73,24 +74,49 @@ const numberOfImages = document.querySelectorAll(".carrousel_img img").length;
 let imageIndex = 1;
 let translateX = 0;
 
+if (screen.width > 780)
+{
+    carrouselButtons.forEach(button => {
+        button.addEventListener("click", event =>{
+            if(event.target.id === 'precedent'){
+                if(imageIndex !== 1) {
+                    imageIndex--;
+                    translateX += 600
+                }
+            } else{
+                if(imageIndex !== numberOfImages){
+                    imageIndex++;
+                    translateX -= 600;
+                }
+            }
+        
+            carrouselImages.style.transform = `translateX(${translateX}px)`;
+        })
+    });
+}
+else
+{
+    carrouselButtons.forEach(button => {
+        button.addEventListener("click", event =>{
+            if(event.target.id === 'precedent'){
+                if(imageIndex !== 1) {
+                    imageIndex--;
+                    translateX += 390
+                }
+            } else{
+                if(imageIndex !== numberOfImages){
+                    imageIndex++;
+                    translateX -= 390;
+                }
+            }
+        
+            carrouselImages.style.transform = `translateX(${translateX}px)`;
+        })
+    });
+}
 
-carrouselButtons.forEach(button => {
-    button.addEventListener("click", event =>{
-        if(event.target.id === 'precedent'){
-            if(imageIndex !== 1) {
-                imageIndex--;
-                translateX += 600
-            }
-        } else{
-            if(imageIndex !== numberOfImages){
-                imageIndex++;
-                translateX -= 600;
-            }
-        }
-    
-        carrouselImages.style.transform = `translateX(${translateX}px)`;
-    })
-});
+
+//En cas d'utilisation d'un téléphone 
 
    
 

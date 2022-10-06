@@ -37,20 +37,15 @@ nav a{
     color: white;
 }
 
-.navColorUp{
+/* .navColorUp{
     color: rgb(237, 194, 113);
 }
 
 .navColorDef{
     color: white;
-}
+} */
 
-section{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .menuFixe{
    display: flex;
@@ -61,11 +56,11 @@ section{
    left: 97.1%;
    position:fixed;
    height: 205px;
-   width: 50px;
+   min-width: 50px;
+   max-width: 50px;
    background-color: white;
    border-top-left-radius: 30px ;
    border-bottom-left-radius: 30px ;
-
 }
 
 .imgMenuFixe{
@@ -73,27 +68,67 @@ section{
     height: 40px;
 }
 
+/*////////MEDIAS QUERYS(VERSION MOBILE)////////*/
+@media (max-width: 780px) {
+    nav a{
+        margin: 0 15px;
+        text-decoration: none;
+        font-size: 10px;
+        color: white;
+    }
+
+    .imgMenuFixe{
+        width: 30px;
+        height: 30px;
+    }
+    
+    .menuFixe{
+        height: 170px;
+        min-width: 40px;
+        max-width: 40px;
+        top: 20%;
+        left: 90%;
+        z-index: 1;
+    }
+
+    #loadText{
+        margin-top: 20%;
+        font-size: 20px;
+        height: 40vh;
+        width: 20vh;
+    }
+}
+
 
 /*/////////////GESTION BACKGROUND SECTIONS/////////////*/
 
-section:nth-of-type(1){
+section{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-1{
     background-image: url('images/fondAccueil.jpg');
     background-image: center !important;
     background-size: 100% !important;
     background-image: no repeat !important;
 }
-section:nth-of-type(2){background-color: lightblue;
-  
+
+.section-2{
+    background-color: lightblue;
 }
-section:nth-of-type(3){
+
+.section-3{
     background-image: url('https://wallpaperaccess.com/full/214962.jpg');
     background-image: center !important;
     background-size: 100% !important;
     background-image: no repeat !important;
     background-attachment: fixed;
-
 }
-section:nth-of-type(4){
+
+.section-4{
     background-color: lightgray;
 }
 
@@ -102,6 +137,18 @@ section:nth-of-type(4){
     margin-top: -80px;
     padding-left: 0px;
     color: white;
+}
+
+/*////MEDIAS QUERYS(VERSION MOBILE)///*/
+@media (max-width: 780px) {
+    section{
+        height: 100vh;
+    }
+
+    .section-1{
+        background-image: none !important;
+        background-color: black;
+    }
 }
 
 
@@ -115,6 +162,7 @@ section:nth-of-type(4){
     flex-direction: row;
 
 }
+
 .imgPres img{
     width: 50%;
     height: 50%;
@@ -151,6 +199,54 @@ section:nth-of-type(4){
     opacity: 1;
     transform: translateX(0);
     transition: .8s;
+}
+
+/*///MEDIAS QUERYS(VERSION MOBILE)///*/
+@media (max-width: 780px) {
+
+    .section-2{
+        display: flex;
+        align-items: center;
+        justify-content: center !important;
+        flex-direction: column;
+    }
+
+    .imgPres img{
+        width: 150px;
+        height: 150px;
+        border: 5px snow solid;
+        border-radius: 20px;
+        z-index: 1000;
+        margin-top: 0;
+        margin-bottom: 12%;
+    }
+
+    .textPres{
+        z-index: auto;
+        font-size: 20px;
+        width: 75%;
+        text-align: center;
+        border: 3px white groove;
+        border-radius: 20px;
+        padding: 1%;
+        color:rgb(45, 44, 44);  
+    }
+
+    .revealImg{
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    
+    .revealText{
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    
+    .reveal-visible{
+        opacity: 1;
+        transform: translateX(0);
+        transition: .8s;
+    }
 }
 
 /*//////////////COMPETENCE/////////////*/
@@ -243,6 +339,39 @@ button:hover{
     right:5px;
 }
 
+/*////////MEDIAS QUERYS(VERSION MOBILE)////////*/
+@media (max-width: 780px) {
+    .carrousel_img{
+    display: flex;
+    flex-direction: row !important;
+    transform: translateX(0);
+    transition: transform 0.5s;
+    }
+
+    .logo{
+        width: 390px;
+        height: 250px;
+        border-radius: 5px;
+    }
+
+    button{
+        margin-left: 20%;
+        margin-right: 22%;
+        margin-top: 95%;
+        opacity: 0.50;
+        z-index: auto;
+    }
+
+    button:hover{
+        opacity: 0.75;
+    }
+
+    .carrouselSlide{
+        animation: none ;
+    }
+}
+
+
 /*/////////////////PROJETS//////////////*/
 .containerProjets{
     width: 100%;
@@ -253,7 +382,6 @@ button:hover{
     justify-items: center;
     grid-template-rows: repeat(3, 400px);
     /* background-color: red; */
- 
 }
 
 .projet a{
@@ -290,6 +418,47 @@ button:hover{
     opacity: 1;
     transform: translatey(0);
     transition: .8s;
+}
+
+/*////////MEDIAS QUERYS(VERSION MOBILE)////////*/
+@media (max-width: 780px) {
+    
+    .containerProjets{
+        margin-top: 25%;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: end;
+        justify-items: center;
+        grid-template-rows: repeat(3, 200px);
+        /* background-color: red; */
+    }
+
+    .projet a{
+        width: 150px;
+        height: 140px;
+        background-color: white;
+        border-radius: 15px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        box-shadow: 5px 5px grey;
+        text-decoration: none;
+        font-size: 10px;
+    }
+
+    .projet img{
+        width:110px;
+        height: 90px;
+        position: center;
+        border-bottom: solid black;
+        border-radius: 15px;
+    }
+    
+
+
 }
 
 /*////////////FOOOTER///////////*/
